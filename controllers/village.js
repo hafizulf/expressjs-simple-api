@@ -64,3 +64,14 @@ module.exports.delete = async(req, res) => {
 
   res.status(200).json({ message: "Village has been deleted" })
 }
+
+module.exports.show = async(req, res) => {
+  const id = req.params.id
+  const village = await Village.findByPk(id)
+
+  if (!village) {
+    return res.json({ message: "Village not found" })
+  }
+
+  res.json(village)
+}

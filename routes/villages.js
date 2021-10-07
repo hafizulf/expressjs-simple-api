@@ -10,5 +10,6 @@ router.route('/villages')
 router.route('/villages/:id')
   .put(villageController.update)
   .delete(villageController.delete)
+  .get(villageController.show)
 
 module.exports = router
