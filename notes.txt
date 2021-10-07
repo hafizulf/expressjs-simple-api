@@ -1,0 +1,9 @@
+- DB
+[1] - Create Roles in array, i.e ["admin", "supervisor", "user"]
+[2] - Create Table user_token, roles, user_roles
+
+- middleware
+[1] Refresh token
+[2] Authorization: RoleFilter
+
+// If logged in => users can't access login && register
