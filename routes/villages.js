@@ -1,13 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-// need to require like this
-const { Village } = require('../models')
+const villageController = require('../controllers/village')
 
-router.get('/villages', async(req, res) => {
-  const village = await Village.findAll()
-
-  res.status(200).json(village)
-})
+router.get('/villages', villageController.index)
 
 module.exports = router
