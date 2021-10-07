@@ -51,3 +51,16 @@ module.exports.update = async(req, res) => {
 
   res.status(200).json(village)
 }
+
+module.exports.delete = async(req, res) => {
+  const id = req.params.id
+  let village = await Village.findByPk(id)
+
+  if (!village) {
+    return res.json({ message: 'Village not found'})
+  }
+
+  village = await village.destroy()
+
+  res.status(200).json({ message: "Village has been deleted" })
+}

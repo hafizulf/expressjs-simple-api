@@ -7,6 +7,8 @@ router.route('/villages')
   .get(villageController.index)
   .post(villageController.store)
 
-router.put('/villages/:id', villageController.update)
+router.route('/villages/:id')
+  .put(villageController.update)
+  .delete(villageController.delete)
 
 module.exports = router
