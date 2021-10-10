@@ -11,6 +11,6 @@ router.route('/villages')
 router.route('/villages/:id')
   .put(authJwt.verifyToken, villageController.update)
   .delete(authJwt.verifyToken, villageController.delete)
-  .get(authJwt.verifyToken, verifyToken, villageController.show)
+  .get(authJwt.verifyToken, villageController.show)
 
 module.exports = router
